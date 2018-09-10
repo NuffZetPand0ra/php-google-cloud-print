@@ -30,8 +30,11 @@ class CloudPrint extends CloudPrintApi
 		return new CloudPrintJob('text/plain', false, $this->config);
 	}
 
-	public function url() {
-		return new CloudPrintJob('url', false, $this->config);
+	public function url($url) {
+		$job = new CloudPrintJob('url', false, $this->config);
+		$job->content($url);
+
+		return $job;
 	}
 
 	public function job($contentType) {

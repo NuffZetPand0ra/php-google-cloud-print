@@ -181,7 +181,7 @@ class CloudPrintJob
 	protected function formatTicket() {
 		return [
 			'version' => '1.0',
-		    'print' =>  $this->ticket
+		    'print' =>  $this->ticket ?? new \stdClass
 		];
 	}
 
